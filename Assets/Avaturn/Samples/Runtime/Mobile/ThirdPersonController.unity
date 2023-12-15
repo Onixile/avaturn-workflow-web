@@ -242,7 +242,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerInput
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1718002317}
     - target: {fileID: 8404553802619585870, guid: 65b479727cfd57d49a1d95aa5e81da5e,
         type: 3}
       propertyPath: m_Name
@@ -1070,6 +1070,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1718002317 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8791703711552947939, guid: 64dce48905ffd9b4293e595fa6941544,
+    type: 3}
+  m_PrefabInstance: {fileID: 1226292289}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1adda2477490416f93b1ac5535f5e586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1972386642
 PrefabInstance:
   m_ObjectHideFlags: 0
