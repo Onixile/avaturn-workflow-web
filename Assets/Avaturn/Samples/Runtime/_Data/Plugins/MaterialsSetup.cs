@@ -26,17 +26,17 @@ namespace Avaturn.Samples.Runtime._Data.Plugins
       if (pipeline == PipelineType.UniversalPipeline)
       {
         SwitchMaterials("Universal Render Pipeline/Lit");
-        Debug.Log("Samples Material Setup: RenderingPipelineSetup URP");
+        Debug.Log("Samples Material Setup: URP");
       }
       else if (pipeline == PipelineType.HDPipeline)
       {
         SwitchMaterials("HDRP/Lit");
-        Debug.Log("Samples Material Setup: RenderingPipelineSetup HDRP");
+        Debug.Log("Samples Material Setup: HDRP");
       }
       else if (pipeline == PipelineType.BuiltInPipeline)
       {
         SwitchMaterials("Standard");
-        Debug.Log("Samples Material Setup: RenderingPipelineSetup BRP");
+        Debug.Log("Samples Material Setup: BRP");
       }
     }
 
