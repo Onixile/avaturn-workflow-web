@@ -60,6 +60,12 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
     [Tooltip("For locking the camera position on all axis")]
     public bool LockCameraPosition;
 
+    public Animator Animator;
+
+    private PlayerInput _playerInput;
+    private CharacterController _controller;
+    private GameObject _mainCamera;
+
     private float _cinemachineTargetYaw;
     private float _cinemachineTargetPitch;
 
@@ -79,15 +85,7 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
     private int _animIDFreeFall;
     private int _animIDMotionSpeed;
 
-    private PlayerInput _playerInput;
-
-    private Animator _animator;
-    private CharacterController _controller;
-    private GameObject _mainCamera;
-
     private const float _threshold = 0.01f;
-
-    private bool _hasAnimator;
 
     private void Awake()
     {
@@ -99,7 +97,6 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
     {
       _cinemachineTargetYaw = CinemachineCameraTarget.transform.rotation.eulerAngles.y;
 
-      _hasAnimator = TryGetComponent(out _animator);
       _controller = GetComponent<CharacterController>();
       _playerInput = GetComponent<PlayerInput>();
 
@@ -112,8 +109,6 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
     private void Update()
     {
       _playerInput.CheckInput();
-
-      _hasAnimator = TryGetComponent(out _animator);
 
       JumpAndGravity();
       GroundedCheck();
@@ -140,8 +135,7 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
       Grounded = Physics.CheckSphere(spherePosition, GroundedRadius, GroundLayers,
         QueryTriggerInteraction.Ignore);
 
-      if (_hasAnimator)
-        _animator.SetBool(_animIDGrounded, Grounded);
+      Animator.SetBool(_animIDGrounded, Grounded);
     }
 
     private void CameraRotation()
@@ -200,11 +194,8 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
 
       _controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 
-      if (_hasAnimator)
-      {
-        _animator.SetFloat(_animIDSpeed, _animationBlend);
-        _animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
-      }
+      Animator.SetFloat(_animIDSpeed, _animationBlend);
+      Animator.SetFloat(_animIDMotionSpeed, inputMagnitude);
     }
 
     private void JumpAndGravity()
@@ -213,11 +204,8 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
       {
         _fallTimeoutDelta = FallTimeout;
 
-        if (_hasAnimator)
-        {
-          _animator.SetBool(_animIDJump, false);
-          _animator.SetBool(_animIDFreeFall, false);
-        }
+        Animator.SetBool(_animIDJump, false);
+        Animator.SetBool(_animIDFreeFall, false);
 
         if (_verticalVelocity < 0.0f)
           _verticalVelocity = -2f;
@@ -226,8 +214,7 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
         {
           _verticalVelocity = Mathf.Sqrt(JumpHeight * -2f * Gravity);
 
-          if (_hasAnimator)
-            _animator.SetBool(_animIDJump, true);
+          Animator.SetBool(_animIDJump, true);
         }
 
         if (_jumpTimeoutDelta >= 0.0f)
@@ -240,10 +227,7 @@ namespace Avaturn.Samples.Runtime._Data.Plugins.Third_Person_Controller.Scripts
         if (_fallTimeoutDelta >= 0.0f)
           _fallTimeoutDelta -= Time.deltaTime;
         else
-        {
-          if (_hasAnimator)
-            _animator.SetBool(_animIDFreeFall, true);
-        }
+          Animator.SetBool(_animIDFreeFall, true);
 
         _playerInput.Jump = false;
       }

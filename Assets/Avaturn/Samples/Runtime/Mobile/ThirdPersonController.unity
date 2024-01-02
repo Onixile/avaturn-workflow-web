@@ -804,7 +804,7 @@ PrefabInstance:
     - target: {fileID: 1441373904851782566, guid: 64dce48905ffd9b4293e595fa6941544,
         type: 3}
       propertyPath: m_Name
-      value: Player
+      value: Character
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
@@ -822,7 +822,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &1226292292 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1960070485361029919, guid: 64dce48905ffd9b4293e595fa6941544,
+  m_CorrespondingSourceObject: {fileID: 8238329734243997343, guid: 64dce48905ffd9b4293e595fa6941544,
     type: 3}
   m_PrefabInstance: {fileID: 1226292289}
   m_PrefabAsset: {fileID: 0}

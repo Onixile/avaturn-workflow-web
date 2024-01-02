@@ -1,21 +1,18 @@
 using System.Threading.Tasks;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Avaturn.Core.Runtime.Scripts.Avatar
 {
   [RequireComponent(typeof(Animator))]
   public class PrepareAvatar : MonoBehaviour
   {
-    public GameObject NonCleanupObject;
-
     private Animator _animator;
 
     public void Start()
     {
       _animator = GetComponent<Animator>();
-      
-      if(_animator.avatar == null)
+
+      if (_animator.avatar == null)
         _animator.avatar = GetAvatar();
     }
 
@@ -48,9 +45,7 @@ namespace Avaturn.Core.Runtime.Scripts.Avatar
       for (int i = 0; i < transform.childCount; i++)
       {
         GameObject targetObject = transform.GetChild(i).gameObject;
-
-        if (targetObject != NonCleanupObject)
-          Destroy(targetObject);
+        Destroy(targetObject);
       }
     }
 
