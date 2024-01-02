@@ -51,6 +51,9 @@ namespace Avaturn.Core.Runtime.Scripts.Avatar
 
     private bool MoveModelFromDownloadedToBase(Transform downloadedModel, out Transform root)
     {
+      downloadedModel.transform.position = transform.position;
+      downloadedModel.transform.rotation = transform.rotation;
+      
       root = downloadedModel.transform.GetChild(0);
 
       if (!root)
