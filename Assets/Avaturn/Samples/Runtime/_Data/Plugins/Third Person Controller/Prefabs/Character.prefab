@@ -320,6 +320,7 @@ GameObject:
   - component: {fileID: 1441373904851782237}
   - component: {fileID: 1441373904851782235}
   - component: {fileID: 8791703711552947939}
+  - component: {fileID: 1118305695067766729}
   - component: {fileID: 1441373904851782234}
   m_Layer: 8
   m_Name: Character
@@ -376,6 +377,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MouseSensitivityX: 3
   MouseSensitivityY: 3
+--- !u!95 &1118305695067766729
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441373904851782566}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 84417c05bf0407846a0702c5b46860a5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &1441373904851782234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -407,7 +427,7 @@ MonoBehaviour:
   BottomClamp: -30
   CameraAngleOverride: 0
   LockCameraPosition: 0
-  Animator: {fileID: 8744199447987459631}
+  Animator: {fileID: 1118305695067766729}
 --- !u!1 &1441373905428966691
 GameObject:
   m_ObjectHideFlags: 0
@@ -2327,7 +2347,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6659708514686071747}
-  - component: {fileID: 8744199447987459631}
   - component: {fileID: 8238329734243997343}
   m_Layer: 8
   m_Name: Player
@@ -2351,25 +2370,6 @@ Transform:
   m_Father: {fileID: 1441373904851782237}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &8744199447987459631
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9115361059554572748}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 84417c05bf0407846a0702c5b46860a5, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8238329734243997343
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2382,3 +2382,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28f071e86c466d45a6f2e409044713a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Animator: {fileID: 1118305695067766729}

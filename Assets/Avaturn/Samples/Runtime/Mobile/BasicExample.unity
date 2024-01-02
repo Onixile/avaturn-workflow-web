@@ -501,7 +501,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28f071e86c466d45a6f2e409044713a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  NonCleanupObject: {fileID: 0}
+  Animator: {fileID: 1166166082}
+--- !u!95 &1166166082 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -4748361991329772099, guid: c2ca2d7a8cc7e344285ab81de5769515,
+    type: 3}
+  m_PrefabInstance: {fileID: 1166166078}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1599334779
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,22 +3,19 @@ using UnityEngine;
 
 namespace Avaturn.Core.Runtime.Scripts.Avatar
 {
-  [RequireComponent(typeof(Animator))]
   public class PrepareAvatar : MonoBehaviour
   {
-    private Animator _animator;
+    public Animator Animator;
 
     public void Start()
     {
-      _animator = GetComponent<Animator>();
-
-      if (_animator.avatar == null)
-        _animator.avatar = GetAvatar();
+      if (Animator.avatar == null)
+        Animator.avatar = GetAvatar();
     }
 
     public async void PrepareModel(Transform downloadedModel)
     {
-      if (_animator.applyRootMotion)
+      if (Animator.applyRootMotion)
       {
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.identity;
@@ -33,7 +30,7 @@ namespace Avaturn.Core.Runtime.Scripts.Avatar
       if (MoveModelFromDownloadedToBase(downloadedModel, out Transform root))
         return;
 
-      _animator.avatar = GetAvatar();
+      Animator.avatar = GetAvatar();
 
       await Task.Yield();
 

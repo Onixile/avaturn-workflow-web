@@ -20,7 +20,7 @@
   },
   "samples": [
     {
-      "displayName": "All",
+      "displayName": "WebGL and Mobile",
       "description": "This repo contains examples of using Avaturn web view in Unity for WebGL and Mobile platforms.",
       "path": "Samples~"
     }
