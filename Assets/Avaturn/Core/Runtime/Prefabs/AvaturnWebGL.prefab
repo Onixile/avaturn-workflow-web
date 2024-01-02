@@ -200,7 +200,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Choose build platform WebGL and make a build to check Avaturn
+  m_Text: Avaturn webview does not work in Editor. Build for WebGL or Mobile to test
 --- !u!1 &4456663598879525236
 GameObject:
   m_ObjectHideFlags: 0
