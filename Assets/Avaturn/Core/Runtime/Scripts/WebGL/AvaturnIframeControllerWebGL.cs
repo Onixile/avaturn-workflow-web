@@ -59,6 +59,8 @@ namespace Avaturn.Core.Runtime.Scripts.WebGL
         return;
 
       string link = _linkFromAPI == "" ? $"https://{_subdomain}.avaturn.dev/iframe" : _linkFromAPI;
+      
+      Debug.Log($"{GetPlatformString()} => {Application.unityVersion}");
 
 #if !UNITY_EDITOR && UNITY_WEBGL
       SetupAvaturnIframeJS(link, Application.unityVersion, GetPlatformString());
