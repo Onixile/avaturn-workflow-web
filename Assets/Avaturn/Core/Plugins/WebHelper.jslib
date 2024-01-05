@@ -9,6 +9,6 @@ mergeInto(LibraryManager.library, {
     },
         
     SetupAvaturnIframeJS: function (link, version, platform){
-        window.setupIframe(UTF8ToString(link), version, platform);
+        window.setupIframe(UTF8ToString(link), UTF8ToString(version), UTF8ToString(platform));
     },
 });
